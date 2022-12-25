@@ -189,8 +189,8 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
         
         var image = Application.loadResource( Rez.Drawables.battery) as BitmapResource;
         dc.drawBitmap(centerX + radiusX - 65, centerY + radiusY - 65, image);
-        drawAnArc(dc, centerX, centerY, radiusX - 10, Graphics.ARC_CLOCKWISE, startAngle, finalAngle, "Red");
-        drawAnArc(dc, centerX, centerY, radiusX - 10, Graphics.ARC_CLOCKWISE, startAngle, endAngle, colorBattery);
+        drawAnArc(dc, centerX, centerY, startAngle, finalAngle, radiusX - 10, chooseDirection(startAngle, finalAngle), "Red");
+        drawAnArc(dc, centerX, centerY, startAngle, endAngle, radiusX - 10, chooseDirection(startAngle, finalAngle), colorBattery);
     }
 
     function setDatas() as Void {
@@ -218,17 +218,16 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
     }
 
     function setStepsGoal(dc) as Void {
-         var stats = System.getSystemStats();
 
-        var startAngle = 90;
+        /*var startAngle = 90;
         var finalAngle = 180;
-        var endAngle = startAngle - (startAngle - finalAngle)*stats.battery/100; // FORMULA : finalAngle - startAngle is negative for CLOCKWISE and positive for COUNTER_CLOCKWISE
+        var endAngle = startAngle + (finalAngle - startAngle)*0.5; // FORMULA : finalAngle - startAngle is negative for CLOCKWISE and positive for COUNTER_CLOCKWISE
         
         var image = Application.loadResource( Rez.Drawables.battery) as BitmapResource;
         dc.drawBitmap(centerX + radiusX - 65, centerY + radiusY - 65, image);
         
         dc.setColor(Application.Properties.getValue(colorBattery) as Number, Application.Properties.getValue("White") as Number);
-        dc.drawArc(centerX, centerY, radiusX - 10, Graphics.ARC_CLOCKWISE, startAngle, endAngle);
+        dc.drawArc(centerX, centerY, radiusX - 10, chooseDirection(startAngle, finalAngle), startAngle, endAngle);*/
     }
 
     function setDate() as Void {
@@ -279,5 +278,9 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
     function drawAnArc(dc, x, y, startAngle, endAngle, radius, direction, color) {
         dc.setColor(Application.Properties.getValue(color) as Number, Application.Properties.getValue("Black") as Number);
         dc.drawArc(x, y, radius, direction, startAngle, endAngle);
+    }
+
+    function chooseDirection(startAngle, endAngle) as Number {
+        return endAngle - startAngle < 0 ? Graphics.ARC_CLOCKWISE : Graphics.ARC_COUNTER_CLOCKWISE;
     }
 }
