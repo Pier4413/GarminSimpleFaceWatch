@@ -1,0 +1,31 @@
+<layout id="WatchFace">
+    <!-- Le fond de la carte -->
+    <drawable class="Background" />
+
+    <!-- Le nombre de pas -->
+    <label id="StepsLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- La connexion avec le telephone -->
+    <label id="BTLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- Le nombre de notifications -->
+    <label id="NTLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- Le status Ne Pas Deranger (Do Not Disturb) -->
+    <label id="DNDLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- Le niveau de batterie -->
+    <label id="BatLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- Le rythme cardiaque (si compatible) -->
+    <label id="HRLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+    
+    <!-- La date (au format DOW JJ MM YY) -->
+    <label id="DateLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- L'heure locale (au format 12/24/Mil suivant option) -->
+    <label id="TimeLabel" x="center" y="center" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- L'heure UTC au même format que l'heure locale-->
+    <label id="UTCLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+</layout>

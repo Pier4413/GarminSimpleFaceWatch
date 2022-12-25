@@ -1,0 +1,24 @@
+<strings>
+
+    <!-- AppName -->
+    <string id="AppName">SimpleWatchFace</string>
+
+    <!-- For settings parameters -->
+    <string id="BackgroundColorTitle">Couleur de fond</string>
+    <string id="ForegroundColorTitle">Couleur du texte</string>
+    <string id="MilitaryFormatTitle">Format militaire 24h</string>
+    <string id="ColorBlack">Noir</string>
+    <string id="ColorDarkGray">Gris sombre</string>
+    <string id="ColorLightGray">Gris léger</string>
+    <string id="ColorWhite">Blanc</string>
+    <string id="ColorBlue">Bleu</string>
+    <string id="ColorRed">Rouge</string>
+
+    <!-- In app -->
+    <string id="day_short">j.</string>
+    <string id="nt_short">NT</string>
+    <string id="charging">Charg.</string>
+    <string id="bt_short">BT</string>
+    <string id="dnd_short">NPD</string>
+
+</strings>

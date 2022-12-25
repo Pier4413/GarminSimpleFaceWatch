@@ -1,0 +1,24 @@
+<strings>
+
+    <!-- AppName -->
+    <string id="AppName">FirstWatchFace</string>
+
+    <!-- For settings parameters -->
+    <string id="BackgroundColorTitle">Background Color</string>
+    <string id="ForegroundColorTitle">Foreground Color</string>
+    <string id="MilitaryFormatTitle">Military Format 24h</string>
+    <string id="ColorBlack">Black</string>
+    <string id="ColorDarkGray">Dark Gray</string>
+    <string id="ColorLightGray">Light Gray</string>
+    <string id="ColorWhite">White</string>
+    <string id="ColorBlue">Blue</string>
+    <string id="ColorRed">Red</string>
+
+    <!-- In app -->
+    <string id="day_short">d.</string>
+    <string id="nt_short">NT</string>
+    <string id="charging">Charg.</string>
+    <string id="bt_short">BT</string>
+    <string id="dnd_short">DND</string>
+
+</strings>
