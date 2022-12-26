@@ -4,4 +4,5 @@
     <font id="fontMedium" filename="medium/normal.fnt" antialias="true"/>
     <font id="fontLarge" filename="large/bold.fnt" filter="0123456789:" antialias="true"/>
     <font id="fontXLarge" filename="xLarge/bold.fnt" filter="0123456789:" antialias="true"/>
+    <font id="fontXXLarge" filename="xxLarge/bold.fnt" filter="0123456789:" antialias="true"/>
 </fonts>
