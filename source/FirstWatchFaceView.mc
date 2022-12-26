@@ -36,13 +36,15 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
     var radiusY;
 
     /* Empty data (like empty string for example) */
-    var emptyFormat = "$1$";
-    var emptyText = "";
-    var noData = "--";
-    var emptyArc = "Red";
-    var backgroundColor = "Black";
-    var numberFormat = "%02d";
-    var emptyCircle = "Red";
+    var emptyFormat = "$1$"; // The empty format
+    var emptyText = ""; // The empty text
+    var noData = "--"; // The no data text
+    var emptyArc = "Red"; // The empty arc color
+    var backgroundColor = "Black"; // The background color
+    var numberFormat = "%02d"; // The number format
+    var emptyCircle = "Red"; // For the circle empty
+    var defaultForeground = 0xFFFFFF as Number; // Default value for foreground
+    var defaultBackground = 0x000000 as Number; // Default value for background
 
     /* Bluetooth informations to be used */
     var xPosBT = 25;
@@ -159,7 +161,7 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
         
         /* Date informations to be used */
         xPosDate = centerX + radiusX - 25;
-        yPosDate = centerY - 2*size_2_Medium;
+        yPosDate = centerY - 2*size_2_Tiny;
 
         /* Time position calculation */
         xPosTime = centerX;
@@ -193,11 +195,7 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
         xPosRain = centerX;
         yPosRain = centerY + 2*radiusY/3;
 
-        // Check if military mode. If yes then change the format of the time
-        if (Application.Properties.getValue(militaryOption)) {
-            textTime = "$1$$2$";
-            textUTC = "UTC\n$1$$2$";
-        }
+        
 
         // Load the layout
         setLayout(Rez.Layouts.WatchFace(dc));
@@ -417,7 +415,7 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
         var today = Gregorian.info(Time.now(), Time.FORMAT_MEDIUM);
 
         // Update the view
-        fillLabel(labelDate, colorDate, fontMedium, xPosDate, yPosDate, textDate, [today.day_of_week, today.day]);
+        fillLabel(labelDate, colorDate, fontTiny, xPosDate, yPosDate, textDate, [today.day_of_week, today.day]);
     }
 
 
@@ -451,7 +449,14 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
         var label = View.findDrawableById(identifier) as Text;
 
         if(label != null) {
-            label.setColor(Application.Properties.getValue(color) as Number);
+            var loadedColor = defaultForeground;
+            
+            try {
+                loadedColor = Application.Properties.getValue(color) as Number;
+            } catch(e instanceof Lang.Exception) {
+                System.println("Color Exception fillLabel : "+e.getErrorMessage());
+            } 
+            label.setColor(loadedColor);
             label.setLocation(xPos, yPos);
             label.setFont(font);
             label.setText(Lang.format(textFormat, parameters));
@@ -472,6 +477,16 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
         if (!System.getDeviceSettings().is24Hour && hours > 12) {
             hours = hours - 12;
         }
+
+        try {
+            // Check if military mode. If yes then change the format of the time
+            if (Application.Properties.getValue("UseMilitaryFormat")) {
+                textTime = "$1$$2$";
+                textUTC = "UTC\n$1$$2$";
+            }
+        } catch(e instanceof Lang.Exception) {
+            System.println("Military zone exception : "+e.getErrorMessage());
+        }
         
         hours = hours.format(numberFormat);
         minutes = minutes.format(numberFormat);
@@ -491,7 +506,15 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
      * @param color The color of the arc as a String
      */
     function drawAnArc(dc, x, y, startAngle, endAngle, radius, direction, color) as Void {
-        dc.setColor(Application.Properties.getValue(color) as Number, Application.Properties.getValue(backgroundColor) as Number);
+        var foreground = defaultForeground;
+        var background = defaultBackground;
+        try {
+            foreground = Application.Properties.getValue(color) as Number;
+            background = Application.Properties.getValue(backgroundColor) as Number;
+        } catch(e instanceof Lang.Exception) {
+            System.println("Color Exception drawAnArc : "+e.getErrorMessage());
+        }
+        dc.setColor(foreground, background);
         dc.drawArc(x, y, radius, direction, startAngle, endAngle);
     }
 
@@ -504,7 +527,15 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
      * @param color The color of the circle as a String
      */
     function drawACircle(dc, x, y, radius, color) as Void {
-        dc.setColor(Application.Properties.getValue(color) as Number, Application.Properties.getValue(backgroundColor) as Number);
+        var foreground = defaultForeground;
+        var background = defaultBackground;
+        try {
+            foreground = Application.Properties.getValue(color) as Number;
+            background = Application.Properties.getValue(backgroundColor) as Number;
+        } catch(e instanceof Lang.Exception) {
+            System.println("Color Exception drawACircle : "+e.getErrorMessage());
+        }
+        dc.setColor(foreground, background);
         dc.drawCircle(x, y, radius);
     }
 
