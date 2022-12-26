@@ -4,4 +4,6 @@
     <bitmap id="steps" filename="steps.png"/>
     <bitmap id="heart" filename="heart.png"/>
     <bitmap id="altitude" filename="altitude.png"/>
+    <bitmap id="temperature" filename="temperature.png"/>
+    <bitmap id="rain" filename="rain.png"/>
 </drawables>
