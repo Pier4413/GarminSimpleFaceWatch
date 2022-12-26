@@ -1,7 +1,8 @@
 <resources>
     <settings>
-        <setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
+        <!-- BUG There is a bug in CIQ when modifying properties so this part is commented until a hack is found -->
+        <!--<setting propertyKey="@Properties.UseMilitaryFormat" title="@Strings.MilitaryFormatTitle">
             <settingConfig type="boolean"/>
-        </setting>
+        </setting>-->
     </settings>
 </resources>

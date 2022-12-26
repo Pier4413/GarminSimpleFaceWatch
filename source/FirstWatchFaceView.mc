@@ -480,10 +480,15 @@ class FirstWatchFaceView extends WatchUi.WatchFace {
 
         try {
             // Check if military mode. If yes then change the format of the time
+            // BUG There is a bug in CIQ when modifying properties so this part is commented until a hack is found
+            /*System.println(Application.Properties.getValue("UseMilitaryFormat"));
             if (Application.Properties.getValue("UseMilitaryFormat")) {
                 textTime = "$1$$2$";
                 textUTC = "UTC\n$1$$2$";
-            }
+            } else {
+                textTime = "$1$:$2$";
+                textUTC = "UCT\n$1$:$2$";
+            }*/
         } catch(e instanceof Lang.Exception) {
             System.println("Military zone exception : "+e.getErrorMessage());
         }
