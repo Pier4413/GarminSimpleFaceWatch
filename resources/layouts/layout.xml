@@ -2,30 +2,39 @@
     <!-- Le fond de la carte -->
     <drawable class="Background" />
 
-    <!-- Le nombre de pas -->
+    <!-- Steps number -->
     <label id="StepsLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
 
-    <!-- La connexion avec le telephone -->
+    <!-- Phone connexion -->
     <label id="BTLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
 
-    <!-- Le nombre de notifications -->
+    <!-- Notifications number -->
     <label id="NTLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
 
-    <!-- Le status Ne Pas Deranger (Do Not Disturb) -->
+    <!-- Do Not Disturb status -->
     <label id="DNDLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
 
-    <!-- Le niveau de batterie -->
+    <!-- Battery level -->
     <label id="BatLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
 
-    <!-- Le rythme cardiaque (si compatible) -->
+    <!-- HeartRate -->
     <label id="HRLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- Altitude -->
+    <label id="AltitudeLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
     
-    <!-- La date (au format DOW JJ MM YY) -->
+    <!-- Date -->
     <label id="DateLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
 
-    <!-- L'heure locale (au format 12/24/Mil suivant option) -->
+    <!-- Local Time -->
     <label id="TimeLabel" x="center" y="center" font="Graphics.FONT_LARGE" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
 
-    <!-- L'heure UTC au même format que l'heure locale-->
+    <!-- UTC Time (same format as Local time)-->
     <label id="UTCLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+
+    <!-- Temperature -->
+    <label id="TemperatureLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
+    
+    <!-- Temperature -->
+    <label id="RainLabel" x="center" y="center" font="Graphics.FONT_XTINY" justification="Graphics.TEXT_JUSTIFY_CENTER" color="Graphics.COLOR_BLUE" />
 </layout>
