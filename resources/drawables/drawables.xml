@@ -2,4 +2,6 @@
     <bitmap id="LauncherIcon" filename="launcher_icon.png" />
     <bitmap id="battery" filename="battery.png"/>
     <bitmap id="steps" filename="steps.png"/>
+    <bitmap id="heart" filename="heart.png"/>
+    <bitmap id="altitude" filename="altitude.png"/>
 </drawables>
